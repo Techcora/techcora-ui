@@ -1,8 +1,6 @@
 import {
   Component,
   Input,
-  ContentChild,
-  TemplateRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -52,18 +50,6 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     :host {
-      --tc-dd-btn-primary-bg: #4f46e5;
-      --tc-dd-btn-primary-text: #ffffff;
-      --tc-dd-btn-primary-hover-bg: #4338ca;
-
-      --tc-dd-btn-secondary-bg: #ffffff;
-      --tc-dd-btn-secondary-text: #404040;
-      --tc-dd-btn-secondary-border: #e5e5e5;
-      --tc-dd-btn-secondary-hover-bg: #fafafa;
-
-      --tc-dd-btn-radius: 0.5rem;
-      --tc-dd-btn-font-size: 0.875rem;
-
       display: inline-block;
     }
 
@@ -72,10 +58,10 @@ import { CommonModule } from '@angular/common';
       align-items: center;
       gap: 0.5rem;
       padding: 0.5rem 0.75rem;
-      font-size: var(--tc-dd-btn-font-size);
+      font-size: var(--tc-dd-btn-font-size, 0.875rem);
       font-weight: 500;
       font-family: inherit;
-      border-radius: var(--tc-dd-btn-radius);
+      border-radius: var(--tc-dd-btn-radius, 0.5rem);
       border: none;
       cursor: pointer;
       transition: background-color 0.15s ease;
@@ -84,22 +70,22 @@ import { CommonModule } from '@angular/common';
     }
 
     .tc-dd-btn-primary {
-      background-color: var(--tc-dd-btn-primary-bg);
-      color: var(--tc-dd-btn-primary-text);
+      background-color: var(--tc-dd-btn-primary-bg, #4f46e5);
+      color: var(--tc-dd-btn-primary-text, #ffffff);
     }
 
     .tc-dd-btn-primary:hover {
-      background-color: var(--tc-dd-btn-primary-hover-bg);
+      background-color: var(--tc-dd-btn-primary-hover-bg, #4338ca);
     }
 
     .tc-dd-btn-secondary {
-      background-color: var(--tc-dd-btn-secondary-bg);
-      color: var(--tc-dd-btn-secondary-text);
-      border: 1px solid var(--tc-dd-btn-secondary-border);
+      background-color: var(--tc-dd-btn-secondary-bg, #ffffff);
+      color: var(--tc-dd-btn-secondary-text, #404040);
+      border: 1px solid var(--tc-dd-btn-secondary-border, #e5e5e5);
     }
 
     .tc-dd-btn-secondary:hover {
-      background-color: var(--tc-dd-btn-secondary-hover-bg);
+      background-color: var(--tc-dd-btn-secondary-hover-bg, #fafafa);
     }
 
     .tc-dd-chevron {

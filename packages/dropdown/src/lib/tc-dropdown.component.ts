@@ -101,40 +101,7 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     </div>
   `,
   styles: [`
-    /* ── CSS Custom Properties (defaults match original component) ── */
-
     :host {
-      --tc-dd-bg: #ffffff;
-      --tc-dd-border: #e5e5e5;
-      --tc-dd-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --tc-dd-radius: 0.5rem;
-      --tc-dd-z-index: 50;
-      --tc-dd-py: 0.25rem;
-
-      --tc-dd-item-text: #404040;
-      --tc-dd-item-hover-bg: #fafafa;
-      --tc-dd-item-px: 1rem;
-      --tc-dd-item-py: 0.5rem;
-      --tc-dd-item-font-size: 0.875rem;
-      --tc-dd-item-gap: 0.75rem;
-
-      --tc-dd-item-rich-py: 0.625rem;
-
-      --tc-dd-header-text: #737373;
-      --tc-dd-header-font-size: 0.75rem;
-
-      --tc-dd-divider-color: #e5e5e5;
-
-      --tc-dd-danger-text: #dc2626;
-      --tc-dd-danger-hover-bg: #fef2f2;
-
-      --tc-dd-desc-text: #737373;
-      --tc-dd-desc-font-size: 0.75rem;
-
-      --tc-dd-disabled-opacity: 0.5;
-
-      --tc-dd-label-font-weight: 500;
-
       display: inline-block;
     }
 
@@ -154,12 +121,12 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     .tc-dd-menu {
       position: absolute;
       margin-top: 0.5rem;
-      background: var(--tc-dd-bg);
-      border-radius: var(--tc-dd-radius);
-      box-shadow: var(--tc-dd-shadow);
-      border: 1px solid var(--tc-dd-border);
-      z-index: var(--tc-dd-z-index);
-      padding: var(--tc-dd-py) 0;
+      background: var(--tc-dd-bg, #ffffff);
+      border-radius: var(--tc-dd-radius, 0.5rem);
+      box-shadow: var(--tc-dd-shadow, 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1));
+      border: 1px solid var(--tc-dd-border, #e5e5e5);
+      z-index: var(--tc-dd-z-index, 50);
+      padding: var(--tc-dd-py, 0.25rem) 0;
       overflow: hidden;
       box-sizing: border-box;
     }
@@ -176,10 +143,10 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     .tc-dd-item {
       display: flex;
       align-items: center;
-      gap: var(--tc-dd-item-gap);
-      padding: var(--tc-dd-item-py) var(--tc-dd-item-px);
-      font-size: var(--tc-dd-item-font-size);
-      color: var(--tc-dd-item-text);
+      gap: var(--tc-dd-item-gap, 0.75rem);
+      padding: var(--tc-dd-item-py, 0.5rem) var(--tc-dd-item-px, 1rem);
+      font-size: var(--tc-dd-item-font-size, 0.875rem);
+      color: var(--tc-dd-item-text, #404040);
       background: none;
       border: none;
       width: 100%;
@@ -192,7 +159,7 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     }
 
     .tc-dd-item:hover:not(:disabled) {
-      background-color: var(--tc-dd-item-hover-bg);
+      background-color: var(--tc-dd-item-hover-bg, #fafafa);
     }
 
     /* ── Rich item ── */
@@ -200,9 +167,9 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     .tc-dd-item-rich {
       display: flex;
       align-items: center;
-      gap: var(--tc-dd-item-gap);
-      padding: var(--tc-dd-item-rich-py) var(--tc-dd-item-px);
-      color: var(--tc-dd-item-text);
+      gap: var(--tc-dd-item-gap, 0.75rem);
+      padding: var(--tc-dd-item-rich-py, 0.625rem) var(--tc-dd-item-px, 1rem);
+      color: var(--tc-dd-item-text, #404040);
       background: none;
       border: none;
       width: 100%;
@@ -215,7 +182,7 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     }
 
     .tc-dd-item-rich:hover:not(:disabled) {
-      background-color: var(--tc-dd-item-hover-bg);
+      background-color: var(--tc-dd-item-hover-bg, #fafafa);
     }
 
     .tc-dd-item-content {
@@ -224,14 +191,14 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     }
 
     .tc-dd-item-label {
-      font-weight: var(--tc-dd-label-font-weight);
-      font-size: var(--tc-dd-item-font-size);
+      font-weight: var(--tc-dd-label-font-weight, 500);
+      font-size: var(--tc-dd-item-font-size, 0.875rem);
       margin: 0;
     }
 
     .tc-dd-item-desc {
-      font-size: var(--tc-dd-desc-font-size);
-      color: var(--tc-dd-desc-text);
+      font-size: var(--tc-dd-desc-font-size, 0.75rem);
+      color: var(--tc-dd-desc-text, #737373);
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -241,13 +208,13 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     /* ── Header ── */
 
     .tc-dd-header {
-      padding: var(--tc-dd-item-py) var(--tc-dd-item-px);
+      padding: var(--tc-dd-item-py, 0.5rem) var(--tc-dd-item-px, 1rem);
     }
 
     .tc-dd-header p {
-      font-size: var(--tc-dd-header-font-size);
+      font-size: var(--tc-dd-header-font-size, 0.75rem);
       font-weight: 600;
-      color: var(--tc-dd-header-text);
+      color: var(--tc-dd-header-text, #737373);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin: 0;
@@ -256,24 +223,24 @@ import { TcDropdownIconDirective } from './tc-dropdown-icon.directive';
     /* ── Divider ── */
 
     .tc-dd-divider {
-      border-top: 1px solid var(--tc-dd-divider-color);
+      border-top: 1px solid var(--tc-dd-divider-color, #e5e5e5);
       margin: 0.25rem 0;
     }
 
     /* ── Danger variant ── */
 
     .tc-dd-danger {
-      color: var(--tc-dd-danger-text) !important;
+      color: var(--tc-dd-danger-text, #dc2626) !important;
     }
 
     .tc-dd-danger:hover:not(:disabled) {
-      background-color: var(--tc-dd-danger-hover-bg) !important;
+      background-color: var(--tc-dd-danger-hover-bg, #fef2f2) !important;
     }
 
     /* ── Disabled state ── */
 
     .tc-dd-disabled {
-      opacity: var(--tc-dd-disabled-opacity);
+      opacity: var(--tc-dd-disabled-opacity, 0.5);
       cursor: not-allowed !important;
     }
   `],

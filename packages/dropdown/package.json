@@ -1,6 +1,6 @@
 {
   "name": "@techcora/ui-dropdown",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework-agnostic Angular dropdown component with CSS custom property theming",
   "license": "MIT",
   "peerDependencies": {
