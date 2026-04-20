@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "paths": {
+      "@techcora/ui-page-header": ["./src/public-api"]
+    }
+  }
+}

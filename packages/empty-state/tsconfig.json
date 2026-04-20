@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "paths": {
+      "@techcora/ui-empty-state": ["./src/public-api"]
+    }
+  }
+}
